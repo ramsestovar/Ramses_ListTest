@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *Labeltitulo;
 @property (weak, nonatomic) IBOutlet UILabel *LabelAppRights;
 @property (weak, nonatomic) IBOutlet UILabel *LabelTituloApp;
-//No se usa por ahora
 @property (weak, nonatomic) IBOutlet UILabel *LabelUpdateApp;
 
 @property (weak, nonatomic) IBOutlet UITableView *listView;
