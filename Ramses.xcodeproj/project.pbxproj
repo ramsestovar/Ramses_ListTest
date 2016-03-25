@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C3913B0D1CA4787F00D480B1 /* infoItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3913B0C1CA4787F00D480B1 /* infoItemVC.m */; };
+		C3913B0F1CA5B48F00D480B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3913B0E1CA5B48F00D480B1 /* UIKit.framework */; };
+		C3913B111CA5B49C00D480B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3913B101CA5B49C00D480B1 /* CoreGraphics.framework */; };
 		C3C53C141CA444DB00BA85E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C53C131CA444DB00BA85E1 /* main.m */; };
 		C3C53C171CA444DB00BA85E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C53C161CA444DB00BA85E1 /* AppDelegate.m */; };
 		C3C53C1A1CA444DB00BA85E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C53C191CA444DB00BA85E1 /* ViewController.m */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		C3913B0B1CA4787F00D480B1 /* infoItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoItemVC.h; sourceTree = "<group>"; };
 		C3913B0C1CA4787F00D480B1 /* infoItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoItemVC.m; sourceTree = "<group>"; };
+		C3913B0E1CA5B48F00D480B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3913B101CA5B49C00D480B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C3C53C0F1CA444DB00BA85E1 /* Ramses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ramses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C53C131CA444DB00BA85E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3C53C151CA444DB00BA85E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3913B111CA5B49C00D480B1 /* CoreGraphics.framework in Frameworks */,
+				C3913B0F1CA5B48F00D480B1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,8 @@
 		C3C53C061CA444DB00BA85E1 = {
 			isa = PBXGroup;
 			children = (
+				C3913B101CA5B49C00D480B1 /* CoreGraphics.framework */,
+				C3913B0E1CA5B48F00D480B1 /* UIKit.framework */,
 				C3C53C111CA444DB00BA85E1 /* Ramses */,
 				C3C53C101CA444DB00BA85E1 /* Products */,
 			);

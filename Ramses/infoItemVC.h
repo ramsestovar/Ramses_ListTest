@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemCompany;
 @property (weak, nonatomic) IBOutlet UILabel *itemDate;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImage;
+@property (weak, nonatomic) IBOutlet UIButton *backbutton;
+@property (weak, nonatomic) IBOutlet UIImageView *animationImage;
 
 
 //Variables enviadas por el Segue
@@ -35,6 +37,6 @@
 @property(nonatomic,strong) NSString * summary;
 @property(nonatomic,strong) NSString * name;
 @property(nonatomic,strong) NSString * tituloapp;
-@property(nonatomic,strong) NSData * imagenServidor;
+
 
 @end

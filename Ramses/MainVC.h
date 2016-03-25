@@ -17,4 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *listView;
 
+@property(nonatomic,strong) NSString * servicio;
+
 @end

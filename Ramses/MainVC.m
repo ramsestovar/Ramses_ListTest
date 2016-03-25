@@ -24,28 +24,30 @@
     NSData*imagenServidor;
 }
 
-@synthesize LabelAppRights, Labeltitulo, LabelTituloApp, LabelUpdateApp, listView;
+@synthesize LabelAppRights, Labeltitulo, LabelTituloApp, LabelUpdateApp, listView, servicio;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSURL * url=[NSURL URLWithString:@"https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"];
-    NSData * data=[NSData dataWithContentsOfURL:url];
+    if (servicio==nil) {
+   
+        NSURL * url=[NSURL URLWithString:@"https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"];
+        NSData * data=[NSData dataWithContentsOfURL:url];
+        NSError * error;
 
-    NSError * error;
-
-    if (data!=nil)
-    {
-        jsonServidor = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
-    }
-
+        if (data!=nil)
+            {
+                jsonServidor = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            }
+     }
+    //obtengo array local
     NSArray *pathsInsert = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-
     NSString * documentsDirectoryInsert = [pathsInsert objectAtIndex:0];
     RespuestaLocal = [NSString stringWithFormat:@"%@/%@", documentsDirectoryInsert,@"json"];
     NSDictionary *arrayJsonLocal = [[NSDictionary alloc] initWithContentsOfFile:RespuestaLocal];
     NSLog(@"%@",arrayJsonLocal);
-
+    
+    //encripto en md5 para luego comparar con la respuesta del servidor y saber si ha tenido cambios
     const char *cStr = [RespuestaLocal UTF8String];
     unsigned char digest[16];
     CC_MD5( cStr, (CC_LONG)strlen(cStr), digest ); // This is the md5 call
@@ -72,13 +74,13 @@
             [output2 appendFormat:@"%02x", digest[i]];
 
         if ([output isEqualToString:output2]) {
-            jsonLocal = [arrayJsonLocal copy];
+            jsonLocal = [arrayJsonLocal copy];//en caso de ser igual uso es local
         }else{
             jsonLocal=jsonServidor;
         }
     }
 
-    if (jsonLocal==nil) {
+    if (jsonLocal==nil) {//cubro margen de error, no debe llegar nunca nill
         jsonLocal=jsonServidor;
     }
 
@@ -156,7 +158,7 @@
 
     return celda;
 
-}//Fin algo
+}//Fin cellForRowAtIndexPath
 
 
 
